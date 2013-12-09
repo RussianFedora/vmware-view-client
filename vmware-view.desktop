@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=VMware View
+Comment=Connect to VMware View environment
+Icon=vmware-view-client
+Exec=vmware-view-wrapper
+Terminal=false
+Categories=Network;RemoteAccess;
