@@ -1,0 +1,9 @@
+[Unit]
+Description=VMware View USB daemon
+
+[Service]
+Type=forking
+ExecStart=@LIBDIR@/vmware/vmware-view-usbd-wrapper
+
+[Install]
+WantedBy=multi-user.target
