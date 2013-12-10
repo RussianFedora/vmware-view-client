@@ -2,7 +2,7 @@
 
 Name:           vmware-view-client
 Version:        2.1.0
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        VMware view client
 
 License:        Proprietary
@@ -37,6 +37,8 @@ VMware view client for fedora
 # Fix exec
 sed -i -e 's!@LIBDIR@!%{_libdir}!g' %{SOURCE3} %{SOURCE5} %{SOURCE6}
 
+sed -i -e 's!@LOCALSTATEDIR@!%{_localstatedir}!g' %{SOURCE4}
+
 %build
 
 %install
@@ -62,8 +64,6 @@ mkdir -p %{buildroot}%{_datadir}/applications/
 desktop-file-install %{SOURCE2}
 
 %find_lang vmware-view
-
-rm -f %{buildroot}/find-requires
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/vmware-view.desktop
@@ -98,6 +98,9 @@ fi
 %{_unitdir}/vmware-view-usbd.service
 
 %changelog
+* Tue Dec 10 2013 Igor Gnatenko <i.gnatenko.brain@gmail.com> - 2.1.0-6
+- more fix hardcoded
+
 * Tue Dec 10 2013 Igor Gnatenko <i.gnatenko.brain@gmail.com> - 2.1.0-5
 - use VMware instead of VmWare
 
