@@ -2,8 +2,8 @@
 
 Name:           vmware-view-client
 Version:        2.1.0
-Release:        4%{?dist}
-Summary:        VmWare view client
+Release:        5%{?dist}
+Summary:        VMware view client
 
 License:        Proprietary
 URL:            http://vmware.com/
@@ -22,7 +22,7 @@ Requires: zenity
 BuildRequires: desktop-file-utils systemd
 
 %description
-VmWare view client for fedora
+VMware view client for fedora
 
 %prep
 %setup -q
@@ -98,6 +98,9 @@ fi
 %{_unitdir}/vmware-view-usbd.service
 
 %changelog
+* Tue Dec 10 2013 Igor Gnatenko <i.gnatenko.brain@gmail.com> - 2.1.0-5
+- use VMware instead of VmWare
+
 * Tue Dec 10 2013 Igor Gnatenko <i.gnatenko.brain@gmail.com> - 2.1.0-4
 - Fix doc, drop unneded req
 
