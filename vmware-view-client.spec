@@ -2,7 +2,7 @@
 
 Name:           vmware-view-client
 Version:        2.1.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        VmWare view client
 
 License:        Proprietary
@@ -18,7 +18,6 @@ Source6:        vmware-view-usbd.service
 Exclusivearch:  %{ix86}
 
 Requires: zenity
-Requires: libudev.so.1
 
 BuildRequires: desktop-file-utils systemd
 
@@ -87,7 +86,7 @@ fi
 /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 %files -f vmware-view.lang
-%doc usr/share/doc/*
+%doc usr/share/doc/vmware-view-client/*
 %{_bindir}/vmware-*
 %{_libdir}/vmware/
 %{_libdir}/libpcoip*
@@ -99,6 +98,9 @@ fi
 %{_unitdir}/vmware-view-usbd.service
 
 %changelog
+* Tue Dec 10 2013 Igor Gnatenko <i.gnatenko.brain@gmail.com> - 2.1.0-4
+- Fix doc, drop unneded req
+
 * Tue Dec 10 2013 Igor Gnatenko <i.gnatenko.brain@gmail.com> - 2.1.0-3
 - mega-update #2
 
